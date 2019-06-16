@@ -1,0 +1,76 @@
+{
+  "name": "@alife/lsc-tree-transfer",
+  "version": "1.0.0",
+  "description": "树形穿梭框",
+  "main": "lib/index",
+  "keywords": [
+    "hippo",
+    "wdk",
+    "fusion",
+    "hippo-lsc-tree-transfer"
+  ],
+  "author": {
+    "name": "zhangyuying",
+    "email": "zhangyuying@alibaba-inc.com"
+  },
+  "scripts": {
+    "lint": "npm run eslint && npm-ensure -t deps",
+    "eslint": "eslint 'src/**/*.@(js|jsx)' --fix",
+    "dev": "wdk-builder-pc dev",
+    "build": "wdk-builder-pc build",
+    "test": "wdk-builder-pc test",
+    "precommit": "lint-staged",
+    "prepublishOnly": "npm run build"
+  },
+  "lint-staged": {
+    "src/**/*.@(js|jsx)": [
+      "eslint --fix",
+      "npm-ensure -t deps",
+      "git add"
+    ]
+  },
+  "ensure": {
+    "deps": {
+      "checkDirs": [
+        "src/**/*"
+      ]
+    }
+  },
+  "just": {
+    "type": "component/wdk-comp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:hippo-lsc/tree-transfer.git"
+  },
+  "dependencies": {
+    "@alife/hippo": "^1.x",
+    "lodash": "^4.17.11",
+    "prop-types": "15.x",
+    "styled-components": "^3.4.1"
+  },
+  "devDependencies": {
+    "@ali/eslint-config-wdk": "^1.0.0",
+    "@ali/wdk-builder-pc": "1.x",
+    "babel-eslint": "^8.2.6",
+    "enzyme": "^3.4.1",
+    "enzyme-adapter-react-15": "1.x",
+    "eslint": "5.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-react": "7.x",
+    "husky": "0.x",
+    "lint-staged": "7.x",
+    "npm-ensure": "1.x",
+    "power-assert": "^1.6.0",
+    "react": "15.6.x",
+    "react-dom": "15.6.x",
+    "react-test-renderer": "^15.6.2"
+  },
+  "peerDependencies": {
+    "react": "15.6.x",
+    "react-dom": "15.6.x"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  }
+}
