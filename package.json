@@ -41,7 +41,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.alibaba-inc.com:hippo-lsc/tree-transfer.git"
+    "url": "//github.com/miyuying/tree-transfer.git"
   },
   "dependencies": {
     "@alife/hippo": "^1.x",
